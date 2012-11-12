@@ -1,0 +1,8 @@
+diff -p -up statist-1.4.1/tests/run_statist.sh.lang statist-1.4.1/tests/run_statist.sh
+--- statist-1.4.1/tests/run_statist.sh.lang	2009-03-25 23:56:21.000000000 -0300
++++ statist-1.4.1/tests/run_statist.sh	2009-03-25 23:56:26.000000000 -0300
+@@ -1,3 +1,3 @@
+ statist=../src/statist
+ 
+-$statist --noplot $*
++LC_NUMERIC=C $statist --noplot $*
