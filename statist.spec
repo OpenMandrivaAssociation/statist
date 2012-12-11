@@ -38,3 +38,16 @@ rm -rf %{buildroot}
 %{_bindir}/statist
 %{_mandir}/*/*
 %{_datadir}/locale/*/*/statist.mo
+
+
+%changelog
+* Sun Sep 20 2009 Thierry Vignaud <tvignaud@mandriva.com> 1.4.1-2mdv2010.0
++ Revision: 445234
+- rebuild
+
+* Thu Mar 26 2009 Eugeni Dodonov <eugeni@mandriva.com> 1.4.1-1mdv2009.1
++ Revision: 361236
+- Removed trailing dot from summary.
+- Initial import.
+- Created package structure for statist.
+
