@@ -1,4 +1,4 @@
-Summary:	Statist is a terminal-based statistics program
+Summary:	Terminal-based statistics program
 Name:		statist
 Version:	1.4.1
 Release:	%mkrel 2
