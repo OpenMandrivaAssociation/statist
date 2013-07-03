@@ -1,3 +1,5 @@
+%define debug_package %{nil}
+
 Summary:	Terminal-based statistics program
 Name:		statist
 Version:	1.4.1
@@ -27,7 +29,6 @@ colorized output and uses gnuplot to create graphics.
 %makeinstall_std PREFIX=%{buildroot}/usr
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
 
 %files
 %doc CHANGES COPYING CREDITS KNOWN_BUGS README
