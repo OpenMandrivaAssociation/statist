@@ -1,0 +1,12 @@
+diff -urN statist-1.4.1/src/Makefile statist-1.4.1-patched/src/Makefile
+--- statist-1.4.1/src/Makefile	2006-11-19 05:47:23.000000000 +1000
++++ statist-1.4.1-patched/src/Makefile	2014-04-07 00:19:48.425915473 +1100
+@@ -142,7 +142,7 @@
+ 
+ install: $(MAIN)
+ 	install -d $(PREFIX)/bin
+-	install -s $(MAIN) $(PREFIX)/bin/
++	install $(MAIN) $(PREFIX)/bin/
+ 	(cd ../po; make install)
+ 	(cd ../doc; make install)
+ 

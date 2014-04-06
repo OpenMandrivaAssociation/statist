@@ -1,14 +1,15 @@
-%define debug_package %{nil}
-
-Summary:	Terminal-based statistics program
+Summary:	Statist is a terminal-based statistics program
 Name:		statist
 Version:	1.4.1
-Release:	3
+Release:	4
 License:	GPLv2+
 Group:		Sciences/Mathematics
 Url:		http://statist.wald.intevation.org/
 Source0:	http://wald.intevation.org/frs/download.php/301/statist-%{version}.tar.gz
 Patch0:		statist-1.4.1-lang.patch
+Patch1:		statist-1.4.1-flags.patch
+Patch2:		statist-1.4.1-sfmt.patch
+Patch3:		statist-1.4.1-no-strip.patch
 Requires:	gnuplot
 
 %description
@@ -18,34 +19,28 @@ handled reasonably well even on small machines. In spite of its low overhead
 statist can do quite a bunch of regression functions and tests. It can produce
 colorized output and uses gnuplot to create graphics.
 
-%prep
-%setup -q
-%patch0 -p1
-
-%build
-%make
-
-%install
-%makeinstall_std PREFIX=%{buildroot}/usr
-
-%clean
-
-%files
+%files -f %{name}.lang
 %doc CHANGES COPYING CREDITS KNOWN_BUGS README
 %doc examples/
 %{_bindir}/statist
 %{_mandir}/*/*
-%{_datadir}/locale/*/*/statist.mo
 
+#----------------------------------------------------------------------------
 
-%changelog
-* Sun Sep 20 2009 Thierry Vignaud <tvignaud@mandriva.com> 1.4.1-2mdv2010.0
-+ Revision: 445234
-- rebuild
+%prep
+%setup -q
+%patch0 -p1
+%patch1 -p1
+%patch2 -p1
+%patch3 -p1
 
-* Thu Mar 26 2009 Eugeni Dodonov <eugeni@mandriva.com> 1.4.1-1mdv2009.1
-+ Revision: 361236
-- Removed trailing dot from summary.
-- Initial import.
-- Created package structure for statist.
+%build
+make \
+	COMPILERCFLAGS="%{optflags} -c" \
+	PREFIX=%{buildroot}%{_prefix}
+
+%install
+%makeinstall_std PREFIX=%{buildroot}%{_prefix}
+
+%find_lang %{name}
 

@@ -1,0 +1,12 @@
+diff -urN statist-1.4.1/src/statist.c statist-1.4.1-patched/src/statist.c
+--- statist-1.4.1/src/statist.c	2006-12-03 04:17:24.000000000 +1000
++++ statist-1.4.1-patched/src/statist.c	2014-04-07 00:13:44.803950741 +1100
+@@ -1267,7 +1267,7 @@
+       out_d("\033[0m");
+       break;
+     case ClError :
+-      fprintf(stderr, clError);
++      fprintf(stderr, "%s", clError);
+       break;
+     case ClErrorD :
+       fprintf(stderr, "\033[0m");

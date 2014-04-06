@@ -1,0 +1,14 @@
+diff -urN statist-1.4.1/src/Makefile statist-1.4.1-patched/src/Makefile
+--- statist-1.4.1/src/Makefile	2006-11-19 05:47:23.000000000 +1000
++++ statist-1.4.1-patched/src/Makefile	2014-04-07 00:11:31.023756405 +1100
+@@ -19,9 +19,7 @@
+ 
+ LIBTOOL = ar crus
+ 
+-COMPILERCFLAGS = -c -Wall
+-COMPILERCFLAGS += -g
+-COMPILERCFLAGS += -O2
++COMPILERCFLAGS ?= -c -Wall -g -O2
+ #COMPILERCFLAGS += -DDEBUG
+ 
+ LIBS += -lm
