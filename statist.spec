@@ -1,7 +1,7 @@
 Summary:	Statist is a terminal-based statistics program
 Name:		statist
 Version:	1.4.1
-Release:	4
+Release:	5
 License:	GPLv2+
 Group:		Sciences/Mathematics
 Url:		http://statist.wald.intevation.org/
