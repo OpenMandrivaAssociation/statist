@@ -4,7 +4,7 @@ Version:	1.4.1
 Release:	5
 License:	GPLv2+
 Group:		Sciences/Mathematics
-Url:		http://statist.wald.intevation.org/
+Url:		https://statist.wald.intevation.org/
 Source0:	http://wald.intevation.org/frs/download.php/301/statist-%{version}.tar.gz
 Patch0:		statist-1.4.1-lang.patch
 Patch1:		statist-1.4.1-flags.patch
